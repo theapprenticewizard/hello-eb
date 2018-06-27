@@ -25,5 +25,5 @@ public class HelloController {
 
     @ResponseBody
     @GetMapping("/changes")
-    public String changes() { return "ch ch ch changes"; }
+    public String changes() { return "ch ch ch changes - this changed"; }
 }
