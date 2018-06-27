@@ -10,7 +10,7 @@ phases:
   pre_build:
     commands:
       - $(aws ecr get-login --no-include-email --region us-east-2)
-      - IMAGE_URI = 183145789847.dkr.ecr.us-east-2.amazonaws.com/spam_repo:latest
+      - export IMAGE_URI=183145789847.dkr.ecr.us-east-2.amazonaws.com/spam_repo:latest
   build:
     commands:
       - mvn clean package
