@@ -11,6 +11,7 @@ phases:
     commands:
       - echo $M2_HOME
       - sudo mvn clean install
+
 artifacts:
   files:
     - 'Dockerfile'

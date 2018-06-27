@@ -18,4 +18,8 @@ public class HelloController {
     public String running() {
         return "Hello, I am running!";
     }
+
+    @ResponseBody
+    @GetMapping("/env")
+    public String env() { return System.getenv("potato"); }
 }
