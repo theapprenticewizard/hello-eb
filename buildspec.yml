@@ -3,9 +3,9 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo started build
-      - mvn package
-
+      - mvn clean
+      - mvn install
 artifacts:
   files:
-    - '**/*'
+    - 'Dockerfile'
+    - 'target/eb-demo-0.0.1-SNAPSHOT.jar'
