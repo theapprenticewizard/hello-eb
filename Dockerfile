@@ -8,4 +8,4 @@ EXPOSE 5000
 
 ENV JAVA_OPTS=""
 
-ENTRYPOINT java application.jar
+ENTRYPOINT java -jar application.jar
