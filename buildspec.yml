@@ -7,12 +7,17 @@ phases:
       - apt-get upgrade -y
       - apt-get remove maven2 -y
       - apt-get install -y maven
+  pre_build:
+    commands:
+      - $(aws ecr get-login --no-include-email --region ca-central-1)
+      - IMAGE_URI = 183145789847.dkr.ecr.us-east-2.amazonaws.com/spam_repo:latest
   build:
     commands:
-      - echo $M2_HOME
-      - sudo mvn clean install
-
+      - mvn clean package
+      - docker build -t potato-repo .
+      - docker tag potato-repo:latest $IMAGE_URI
+      - docker push $IMAGE_URI
+      - printf '[{"name":"potato-tomato-container","imageUri":"$IMAGE_URI"}]' > imagedefinitions.json
 artifacts:
   files:
-    - 'Dockerfile'
-    - 'target/eb-demo-0.0.1-SNAPSHOT.jar'
+    - 'imagedefinitions.json'
