@@ -22,4 +22,8 @@ public class HelloController {
     @ResponseBody
     @GetMapping("/env")
     public String env() { return System.getenv("potato"); }
+
+    @ResponseBody
+    @GetMapping("/changes")
+    public String changes() { return "ch ch ch changes"; }
 }
