@@ -1,16 +1,19 @@
-package io.github.theapprenticewizard.ebdemo;
+package io.github.theapprenticewizard.ebdemo.controllers;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-@RestController
+@Controller
 public class HelloController {
 
+    @ResponseBody
     @GetMapping("/health")
     public String health() {
         return "ok";
     }
 
+    @ResponseBody
     @GetMapping("/running")
     public String running() {
         return "Hello, I am running!";
