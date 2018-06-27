@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - echo $M2_HOME
-      - sudo ./mvnw clean install
+      - sudo mvnw clean install
 artifacts:
   files:
     - 'Dockerfile'
