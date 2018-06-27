@@ -4,11 +4,11 @@ phases:
   install:
     commands:
       - apt-get update -y
-      - apt-get install -y maven
+      - apt-get install -y maven3
   build:
     commands:
       - echo $M2_HOME
-      - sudo mvnw clean install
+      - sudo mvn clean install
 artifacts:
   files:
     - 'Dockerfile'
